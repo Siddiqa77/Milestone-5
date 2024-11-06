@@ -1,65 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Resume</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <h1>Unique Path and Shearable link</h1>
 
-    <!-- Form Start -->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shareable Resume Builder</title>
+  <link rel="stylesheet" href="style.css">
+</head>
 
-    <form id="resume-form">
-      <fieldset>
-        <legend>Personal Information</legend>
+<body>
+  <section class="container">
+    <div class="resume-section" id="resume-input">
 
-        <div class="form-container">
-          <div class="form-fields">
-            <label for="username">Path URL:</label>
-            <input type="text" id="username" name="username" required />
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required />
+      <div class="layout">
+        <!-- Left-hand side: Image side -->
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required />
+        <p class="text"> Upload Profile Picture</p>
+        
+       <div class="image-container">
+        <img src="/pic.jpg" alt="Profile Picture" class="pic" id="profile-pic" />
+        <input type="file" id="image-upload" accept="image/*" class="pic-input" />
+      </div>
 
-            <label for="phone">Phone:</label>
-            <input type="tel" id="phone" name="phone" />
-
-            <label for="address">Address:</label>
-            <textarea id="address" name="address" rows="4" required> </textarea>
+        <form id="career-cert-form">
+          <!-- Career Objective -->
+          <div class="form-group">
+            <label class="about" for="about">About Me</label>
+            <textarea  id="about" placeholder="Enter about yourself" required></textarea>
           </div>
-          <div class="picture-container">
-            <img src="./mypic.jpg" alt="pic" />
+
+          <!-- Certification 1 -->
+          <div class="form-group">
+            <label for="cert1-name">Certification 1 Name</label>
+            <input type="text" id="cert1-name" placeholder="Enter your first certification" required>
           </div>
-        </div>
-        <fieldset>
-          <legend>Education</legend>
-          <label for="education"></label>
-          <input class="size" type="text" id="education" />
-        </fieldset>
-        <fieldset>
-          <legend>Work Experience</legend>
-          <label for="experience"></label>
-          <input class="size" type="text" id="experience" />
-        </fieldset>
-        <fieldset>
-          <legend>Skills</legend>
-          <label for="skills"></label>
-          <input class="size" type="text" id="skills" />
-        </fieldset>
-      </fieldset>
 
-      <button type="submit">Generate Resume</button>
-    </form>
+          <div class="form-group">
+            <label for="cert1-description">Certification 1 Description</label>
+            <textarea  class="text" id="cert1-description" placeholder="Enter a description for your first certification"
+              required></textarea>
+          </div>
 
-    <!-- Form End -->
+          <!-- Certification 2 -->
+          <div class="form-group">
+            <label for="cert2-name">Certification 2 Name</label>
+            <input  type="text" id="cert2-name" placeholder="Enter your second certification" required>
+          </div>
 
-    <!-- Resume Generated -->
-    <div id="resumeOutput"></div>
+          <div class="form-group">
+            <label for="cert2-description">Certification 2 Description</label>
+            <textarea id="cert2-description" placeholder="Enter a description for your second certification"
+              required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="language">Language</label>
+            <textarea id="language" placeholder="languages"
+              required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="date">Date Of Birth</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+        </form>
+      </div>
 
-    <script src="app.js"></script>
-  </body>
+      <!-- Right-hand side: info detail-->
+      <div class="right-container">
+        <h1 class="name-heading" id="fullname"></h1>
+        <h1>Shareable Resume Builder</h1>
+        <form id="resume-form">
+          <h3>Personal Information</h3>
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Enter your name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="name">Profession</label>
+            <input class="span" type="text" id="profession" placeholder="Enter your profession" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input class="text" type="email" id="email" placeholder="Enter your email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input class="text" type="text" id="phone" placeholder="Enter your phone number" required>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input class="text" type="text" id="address" placeholder="Enter your address" required>
+          </div>
+
+          <div class="form-group">
+            <label for="skills">Technical Skills</label>
+            <textarea class="text" id="skills" placeholder="List your skills (comma-separated)" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="experience">Professional Experience</label>
+            <textarea class="text" id="experience" placeholder="Describe your experience" required></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="education">Education</label>
+            <textarea class="text" id="education" placeholder="Describe your education" required></textarea>
+          </div>
+          
+          <button class="button" type="submit"><span>Generate Resume</span></button>
+
+        </form>
+
+      </div>
+
+    </div>
+    <div class="resume-output" id="resume-output" contenteditable="true" >
+      <!-- Generated resume will appear here -->
+    </div>
+
+   
+    <div class="print-button-container">
+      <button class="button" id="print-resume"><span>Print Resume</span></button>
+    </div>
+
+
+    <div id="shareable-link-container" style="display: none; text-align: center;">
+
+      <h2>Shareable Link</h2>
+      <p>Here is your unique link to view your Resume</p>
+      <a id="shareable-link" target="_blank"></a>
+      
+
+    </div>
+
+  </section>
+
+
+
+
+
+  <script src="app.js"></script>
+</body>
+
 </html>

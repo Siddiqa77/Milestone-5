@@ -269,7 +269,9 @@ h3 {
 /* Responsive Styles for Mobile Devices */
 @media (max-width: 480px) {
 
-  #resume-input{
+  #resume-output{
+    display: flex;
+  }
    
   .resume-section {
     padding: 5px;
@@ -326,8 +328,6 @@ h3 {
   }
 
   
-  #shareable-link-container{
-  display: none;
-  }
+}
 
-  }
+  

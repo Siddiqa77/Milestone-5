@@ -270,8 +270,7 @@ h3 {
 @media (max-width: 480px) {
 
   #resume-input{
-    display: flex;
-  }
+   
   .resume-section {
     padding: 5px;
   }
@@ -289,6 +288,7 @@ h3 {
     font-size: 16px;
   }
   #resume-output {
+    display: flex;
     padding: 5px;
     font-size: 12px;
   }

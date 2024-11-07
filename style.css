@@ -269,10 +269,7 @@ h3 {
 /* Responsive Styles for Mobile Devices */
 @media (max-width: 480px) {
 
-  #resume-output{
-    display: flex;
-  }
-   
+ 
   .resume-section {
     padding: 5px;
   }
